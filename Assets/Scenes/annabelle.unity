@@ -533,8 +533,8 @@ Transform:
   m_GameObject: {fileID: 1584748868}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.25, y: 0.73, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -8.04, y: 0.4127, z: 0}
+  m_LocalScale: {x: 0.4977292, y: 0.36554146, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1751647155}
@@ -604,6 +604,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  maxSpeed: 5
 --- !u!1 &1751647154
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    [SerializeField] public float maxSpeed;
+
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
@@ -42,7 +44,13 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
+        // Changed horizontal movement to force-based for testing max speed constraints
+        rb.AddForce(new Vector2(speed*horizontal, 0));
+        if (rb.linearVelocity.magnitude > maxSpeed)
+        {
+            rb.linearVelocity = Vector2.ClampMagnitude(rb.linearVelocity, maxSpeed);
+        }
+
     }
 
     private bool IsGrounded()
